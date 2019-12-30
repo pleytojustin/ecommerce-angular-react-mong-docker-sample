@@ -1,22 +1,18 @@
-version: '3'
-services: 
-    web:
-        container_name: web
-        image: server_eccomerce_test
-        build: .
-        command: node server.js
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+    ecommerce-client: # name of the first service
+        build: client # specify the directory of the Dockerfile
+        ports:
+            - "4200:4200" # specify port forewarding
+    ecommerce-server:
+        build: server
         ports: 
             - "3000:3000"
-        volumes:
-            - .:/usr/app
-            - /usr/src/app/node_modules
         depends_on: 
             - mongo
     mongo:
-        container_name: mongo
         image: mongo
-        build: .
-        volumes:
-          - ./data:/data/db
         ports:
-          - "27017:27017"
+            - "27017:27017"

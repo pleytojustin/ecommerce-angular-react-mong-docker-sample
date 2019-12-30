@@ -2,7 +2,6 @@ var cors = require('cors')
 
 module.exports = (app) => {
     const carts = require('../controllers/cart.controllers.js');
-
     app.use(cors());
 
 

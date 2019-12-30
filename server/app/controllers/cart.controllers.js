@@ -17,7 +17,8 @@ const Cart = require('../models/cart.models.js');
             imageUrl: req.body.imageUrl,
             price: req.body.price,
             description: req.body.description,
-            variants: req.body.variants
+            variants: req.body.variants.Cart,
+            quantity: req.body.quantity
         });
         cart.save()
         .then(data => {
@@ -82,7 +83,8 @@ const Cart = require('../models/cart.models.js');
             imageUrl: req.body.imageUrl,
             price: req.body.price,
             description: req.body.description,
-            variants: req.body.variants
+            variants: req.body.variants,
+            quantity: req.body.quantity
         }, {new: true})
         .then(cart => {
             if(!cart) {
