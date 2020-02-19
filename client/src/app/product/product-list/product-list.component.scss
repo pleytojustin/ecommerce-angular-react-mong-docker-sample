@@ -1,0 +1,97 @@
+img {
+    max-width: 270px;
+    height: 270px;
+    object-fit: cover;
+    align-content: center;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px 0px;
+    justify-content: center;
+}
+
+li {
+    margin: 2px;
+    
+
+}
+
+
+$text: #303336;
+$light-text: #8c98a8;
+$button: #49B956;
+$button-hover: #60CF6F;
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+.product-box {
+    font: 13px/23px "Raleway", Arial, sans-serif;
+    color: $text;  
+    padding: 40px 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 300px;
+    height: 465px;
+    background: white;
+    border-radius: 3px;
+    position: relative
+}
+
+.price {
+    position: absolute;
+    top: 180px;
+    left: 35%;
+    color: white;
+    text-align: center;
+    background: rgba(0,153,285,0.8);
+    border-radius: 50%;
+    padding: 19px 33px;
+    font-size: 22px;
+    
+    div {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+}
+.information {
+    text-align: center;
+    margin-top: 18px;
+}
+  
+.name {
+    font-size: 22px;
+}
+  
+.store {
+    font-size: 16px;
+    color: $light-text;
+    margin-bottom: 28px;
+
+    width: 270px;
+    overflow: hidden;
+    height: 50px;
+
+}
+  
+.button {
+    text-decoration: none;
+    background: $button;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 54px;
+    border-radius: 5px;
+    
+    &:hover {
+      background: $button-hover;
+    }
+}
+
+
+

@@ -1,0 +1,39 @@
+
+
+  <div class="wrap">
+    <h2 style="margin-top: 50px;">Search:    </h2>
+        <input name="test" type="text" class="form-control" placeholder="Product Name" [(ngModel)]="searchProductName" />
+ 
+  <div>
+
+
+
+<ul *ngIf="products$ | async as products ">
+
+    <li *ngFor="let product of products | productFilter:searchProductName">
+        
+        <!-- <img [src]="product.imageUrl">
+        {{ product.productName }} -->
+        <div class="product-box">
+            <div class="container">
+              <img [src]="product.imageUrl"/>
+              
+              <div class="price">₱ <div>{{ product.price }}</div></div>
+              
+              <div class="information">
+          
+                <div class="name">{{ product.productName }}</div>
+                
+                <div class="store">{{ product.description }}</div>
+                
+                <a [routerLink]="product._id" class="button">View Details</a>
+                
+              </div> <!-- end information -->
+            </div> <!-- end container -->
+          </div> <!-- end product-box -->
+    </li>
+</ul> 
+<div>
+  <button class="button" style="margin: 30px;" routerLink="/admin">Admin</button>
+
+</div>

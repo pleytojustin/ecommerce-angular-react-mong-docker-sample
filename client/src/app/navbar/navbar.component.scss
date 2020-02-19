@@ -1,0 +1,28 @@
+nav {
+    background: linear-gradient(to right, #f271f2, #e94057);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+button {
+    border: 0px;
+    background: linear-gradient(to right, #00ff00, #00c6ff);
+    font-size: 18px;
+    color: white;
+    margin-right: 14px;
+    height: 50px;
+    width: 100px;
+    &:hover {
+        border-radius: 0px;
+        background: blueviolet;
+ 
+        transform: translateY(-2px) scale(1.1);
+
+    }
+}

@@ -1,0 +1,36 @@
+<div id="container">
+    
+    <div id="slider">
+      <nav class="slide">
+        <ul>
+          <li><img [src]="product.imageUrl"></li>
+    
+        </ul>
+      </nav>
+    </div>
+    
+    <div id="product-info">
+      <h2>{{ product.productName }}</h2>
+      <p class="price">₱ {{ product.price | number: '2.2-2'  }}</p>
+      
+      <div class="info-wrapper">
+        
+        <div class="tab">
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1"><span>Description</span></label>
+           
+     
+            <p>{{ product.description }}</p>
+   
+        </div>
+      </div>
+      
+      <div class="info-wrapper" style="margin-top: 50px;">
+        <!-- <a   class="button" (click)="addToCart(product)">Add to Cart</a> -->
+        <a   class="button" (click)="addToCart(product)">Add to Cart</a>
+
+      </div>
+      
+    </div>
+    
+  </div>

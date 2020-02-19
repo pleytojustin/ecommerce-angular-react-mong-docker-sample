@@ -1,0 +1,55 @@
+<!-- <p>cart works!</p>
+
+
+<div *ngFor="let items of cartItems"> {{ items.productName }}</div> -->
+
+<h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-removal">Remove</label>
+  </div>
+  <div *ngFor="let items of cartItems">
+  <div class="product">
+    <div class="product-image">
+      <img [src]="items.imageUrl">
+    </div>
+    <div class="product-details">
+      <div class="product-title">{{ items.productName }}</div>
+      <p class="product-description">{{ items.description }}</p>
+    </div>
+    <div class="product-price">{{ items.price }}</div>
+    <div class="product-removal">
+      <button class="remove-product" (click)="removeCart(items)">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal"> {{ (total) | number: '1.2-2'  }}</div>
+    </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax"> {{ (total * 0.05) | number: '1.2-2'  }}</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping"> 50.00</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total"> {{ (total + (total * 0.05) + 50) | number: '1.2-2' }}</div>
+    </div>
+  </div>
+      
+      <button class="checkout">Checkout </button>
+
+</div>

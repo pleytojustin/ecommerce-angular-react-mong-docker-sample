@@ -1,0 +1,75 @@
+<div class="container">
+<!-- <h1>Add Product</h1>
+<form>
+    <input type="text" name="productName" id="productName" >
+    <br>
+    <input type="number" name="price" ng-model="newProduct.price" placeholder="Product Pirce">
+    <br>
+    <input type="textBox" name="description" ng-model="newProduct.description" placeholder="Description">
+    <br>
+    <input type="text" name="imageUrl"  ng-model="newProduct.imageUrl" placeholder="Image URL">
+    <br>
+    <input class="button" type="submit" value="Add Product" (click)="addProduct(newProduct,'hello')">
+</form> -->
+
+
+<h1>Add Product</h1>
+
+<form>
+  <label>
+    <input id="productName" type="text" [formControl] = "productName" placeholder="Product Name">
+    <span>Product Name</span>
+  </label>
+  <label>
+    <input id="productPrice" type="number" [formControl] = "productPrice" placeholder="Price">
+    <span>Price</span>
+  </label>
+
+  <label>
+    <input id="productDescription" type="text" [formControl] = "productDescription" placeholder="Description">
+    <span>Description</span>
+  </label>
+
+
+  <label>
+    <input id="productUrl" type="text" [formControl] = "productUrl" placeholder="Image Url">
+    <span>Image Url</span>
+  </label>
+
+
+  <input type="submit" value="Add Product" (click)="addProduct()"> 
+</form>
+
+</div>
+
+<div class="container">
+    <h1>Product List</h1>
+
+<table class="table">
+    <thead>
+      <tr>
+
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Delete</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <!-- <div *ngFor="let items of productItems">  -->
+
+      <tr *ngFor="let items of productItems">
+
+        <td>{{ items.productName }}</td>
+        <td>₱{{ items.price  | number: '1.2-2' }}</td>
+        <td>{{ items.description }}</td>
+        <td><img [src]="items.imageUrl"/></td>
+        <td><button class="button" (click)="removeProduct(items)">Delete</button> </td>
+      </tr>
+    <!-- </div>       -->
+    </tbody>
+
+  </table>
+</div>
